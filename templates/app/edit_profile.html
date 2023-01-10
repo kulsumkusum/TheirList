@@ -1,0 +1,53 @@
+{% extends "app/edit_prof_base.html" %} 
+{% load static %} 
+{% block profile %}
+<style>
+  .title{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100vw;
+    max-width: 100%;
+    height: max-content;
+    margin-top: 12px;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 18px;
+    padding-bottom: 200px;
+  }
+  .title-dark-mode{
+    color: white;
+  }
+  .title .title_content{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 18px 22px;
+  }
+  .profile_edit_form{
+    text-align: center;
+    {% comment %} background-color: green; {% endcomment %}
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (max-width: 900px) {
+    .title{
+      font-size: 10px;
+    }
+  }
+</style>
+
+
+<div class="title" id="gen-op">
+  {% comment %} <div class="title_content general">General</div> {% endcomment %}
+  <div class="profile_edit_form">
+    {% include "app/profile_form.html" %}
+    {% comment %} <a href="{% url 'app:profile' %}">Change</a> {% endcomment %}
+    {% comment %}  {% endcomment %}
+    {% comment %} {{request.user.pk}} {% endcomment %}
+  </div>
+</div>
+{% endblock %}

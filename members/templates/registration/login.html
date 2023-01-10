@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+<div class="listform">
+<div class="title-det">login</div>
+<small class="goodwords">Hey buddy! HOP ON!</small>
+<div class="ck-content">
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button class="authentication" type = "submit">login</button>
+</form>
+</div>
+</div>
+{% endblock content %}
